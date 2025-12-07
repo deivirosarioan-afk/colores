@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The deivi king </title>
+    <link rel="stylesheet" href="stylem.css">
+</head>
+<body>
+    <p id="texto">Este es un párrafo.</p>
+  <button onclick="cambiarColor()">Cambiar color</button>
+  
+
+  <script>
+    function cambiarColor() {
+      document.getElementById("texto").style.color = "red";
+    }
+  </script>
+<h1>Circulos Dinamicos</h1>
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+<div class="circle blue"></div>
+<div class="circle black"></div>
+<div class="circle grey"></div>
+
+<style>
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px;
+  }
+</style>
+
+<script>
+  const circles = document.querySelectorAll('.circle');
+  const colors = ["red", "yellow", "green", "blue", "black", "grey", "purple", "orange", "pink"];
+
+  setInterval(() => {
+    circles.forEach(circle => {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      circle.style.backgroundColor = randomColor;
+    });
+  }, 1000); // cambia cada segundo
+</script>
+
+</body>
+</html>
